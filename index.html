@@ -4,475 +4,444 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Osama Mohamed Rizk — Flutter Developer</title>
-  <meta name="description" content="Osama Mohamed Rizk — Flutter Developer building production-grade iOS & Android apps with Clean Architecture, BLoC, real-time systems and payment integrations." />
+  <meta name="description" content="Osama Mohamed Rizk — Flutter Developer crafting production-grade fintech and e-commerce apps for iOS & Android: live pricing, payments, real-time orders and Arabic/English RTL." />
   <meta name="theme-color" content="#101112" />
   <meta property="og:title" content="Osama Mohamed Rizk — Flutter Developer" />
-  <meta property="og:description" content="Production-grade Flutter apps for fintech & e-commerce: live pricing, payments, real-time orders, Arabic/English RTL." />
-  <meta property="og:image" content="assets/valuegold-cover.jpg" />
+  <meta property="og:description" content="Production-grade Flutter apps for fintech & e-commerce, shipped to the App Store and Google Play." />
+  <meta property="og:image" content="https://osamamohamedr1.github.io/assets/valuegold-cover.jpg" />
+  <meta property="og:url" content="https://osamamohamedr1.github.io/" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    // Show the intro loader once per session (skipped for reduced motion).
+    // A safety timer guarantees the page is never stuck behind it.
+    (function () {
+      var html = document.documentElement;
+      html.classList.add('js');
+      try {
+        if (!sessionStorage.getItem('or-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          html.classList.add('is-loading');
+          setTimeout(function () { html.classList.remove('is-loading'); }, 7000);
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"></div>
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__coral"></div>
+    <div class="loader__panel">
+      <p class="loader__name" id="loaderName">Osama Mohamed Rizk</p>
+      <div class="loader__bottom">
+        <span class="mono">Flutter Developer — Portfolio ©2026</span>
+        <span class="loader__count" id="loaderCount">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__label"></span></div>
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#top" class="nav__logo">Osama<span>.</span></a>
-      <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Osama Rizk — home">Osama Rizk<sup>©</sup></a>
+
+      <p class="nav__status mono">
+        <span class="dot" aria-hidden="true"></span>
+        Available for work <span class="sep">/</span> Cairo <span class="js-clock">--:--</span>
+      </p>
+
+      <nav class="nav__links" aria-label="Primary">
         <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#capabilities">Services</a>
         <a href="#experience">Experience</a>
-        <a href="#contact" class="nav__cta">Let's talk</a>
+        <a href="#contact" class="nav__cta magnetic">Let's talk</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+
+      <button class="nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span>
       </button>
     </div>
   </header>
 
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="#work"><span class="mono">01</span>Work</a>
+      <a href="#about"><span class="mono">02</span>About</a>
+      <a href="#capabilities"><span class="mono">03</span>Services</a>
+      <a href="#experience"><span class="mono">04</span>Experience</a>
+      <a href="#contact"><span class="mono">05</span>Contact</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="mailto:osamamohamedr1@gmail.com">osamamohamedr1@gmail.com</a>
+      <span>Cairo <span class="js-clock">--:--</span></span>
+    </div>
+  </div>
+
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__bg" aria-hidden="true">
-        <div class="blob blob--coral"></div>
-        <div class="blob blob--mint"></div>
-        <div class="grid-lines"></div>
+        <div class="mesh mesh--coral"></div>
+        <div class="mesh mesh--mint"></div>
       </div>
 
-      <div class="container hero__inner">
-        <p class="eyebrow hero__eyebrow"><span class="dot"></span> Available for Flutter projects</p>
+      <div class="wrap hero__inner">
+        <p class="hero__kicker mono"><span class="hero__line-in">Osama Mohamed Rizk — Flutter Developer</span></p>
+
         <h1 class="hero__title">
-          <span class="line"><span class="hero__word">Hi, I'm</span></span>
-          <span class="line"><span class="hero__word accent">Osama Mohamed Rizk</span></span>
+          <span class="line"><span>Flutter developer</span></span>
+          <span class="line"><span>crafting <em>fintech</em></span></span>
+          <span class="line"><span>&amp; commerce apps.</span></span>
         </h1>
-        <p class="hero__role">
-          <span class="mono">&gt;</span>
-          <span class="typed" id="typed">Flutter Developer</span><span class="caret" aria-hidden="true"></span>
-        </p>
-        <p class="hero__lead">
-          I build <strong>scalable, production-grade mobile apps</strong> for iOS &amp; Android —
-          from live gold pricing and payment flows to real-time merchant operations, shipped to the App Store and Google Play.
-        </p>
-        <div class="hero__ctas">
-          <a href="#work" class="btn btn--primary magnetic">View my work
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="assets/Osama_Mohamed_Rizk_CV.pdf" class="btn btn--ghost magnetic" id="cvBtn" download>Download CV
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
 
-        <ul class="hero__chips" aria-label="Core technologies">
-          <li class="chip float" style="--d:0s">Flutter</li>
-          <li class="chip float" style="--d:.6s">Dart</li>
-          <li class="chip float" style="--d:1.2s">BLoC / Cubit</li>
-          <li class="chip float" style="--d:1.8s">Clean Architecture</li>
-          <li class="chip float" style="--d:2.4s">SignalR</li>
-          <li class="chip float" style="--d:3s">.NET</li>
-        </ul>
-      </div>
-
-      <a href="#stats" class="scroll-hint" aria-label="Scroll down">
-        <span class="scroll-hint__mouse"><span></span></span>
-      </a>
-    </section>
-
-    <!-- ============ STATS ============ -->
-    <section class="stats" id="stats">
-      <div class="container stats__grid">
-        <div class="stat reveal">
-          <span class="stat__num" data-count="2">2</span>
-          <span class="stat__label">Production apps shipped</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="2">2</span>
-          <span class="stat__label">Platforms · iOS &amp; Android</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="20" data-suffix="+">20+</span>
-          <span class="stat__label">Core modules delivered</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="2">2</span>
-          <span class="stat__label">Payment gateways integrated</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
-      <div class="container about">
-        <div class="section__head reveal">
-          <p class="eyebrow">01 — About</p>
-          <h2 class="section__title">Engineering apps people <span class="accent">trust</span> with their money.</h2>
-        </div>
-
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p>
-              I'm a Flutter Developer with commercial experience delivering production apps across iOS and Android.
-              I care about <strong>clean architecture</strong>, predictable state with <strong>BLoC/Cubit</strong>, and the
-              details that make fintech and e-commerce apps feel reliable — token refresh, caching, real-time streams and
-              secure payment flows.
-            </p>
-            <p>
-              I take features all the way from development to <strong>Google Play and App Store releases</strong>, and I bring
-              backend experience with <strong>C#, .NET, ASP.NET Core, EF Core and SQL Server</strong>, so I speak the same
-              language as the API team.
-            </p>
+        <div class="hero__row">
+          <p class="hero__intro">
+            I build production-grade iOS &amp; Android apps: live gold pricing, secure payments and real-time
+            merchant operations, shipped to the App Store and Google Play.
+          </p>
+          <div class="hero__ctas">
+            <a href="#work" class="btn btn--light magnetic">
+              <span>View selected work</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a href="assets/Osama_Mohamed_Rizk_CV.pdf" class="btn btn--line magnetic" id="cvBtn" download>
+              <span>Download CV</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg>
+            </a>
           </div>
 
-          <div class="about__cards">
-            <article class="card info-card reveal">
-              <div class="info-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <h3>B.Sc. Electronics &amp; Communication Engineering</h3>
-                <p>Faculty of Engineering, Mansoura University</p>
-                <p class="muted mono">2020 – 2025 · Grade: Excellent</p>
-              </div>
-            </article>
-            <article class="card info-card reveal">
-              <div class="info-card__icon info-card__icon--mint" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.5 0c-1 4-4 7-7.5 8.5M6 9c1 2 3 4 6 5m1 7l4.5-10L22 21m-7.5-3h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <h3>Languages</h3>
-                <p>Arabic — Native</p>
-                <p>English — Professional working proficiency</p>
-              </div>
-            </article>
-            <article class="card info-card reveal">
-              <div class="info-card__icon info-card__icon--cream" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a7 7 0 0114 0c0 6.5-7 11-7 11z M12 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <h3>Based in Egypt</h3>
-                <p>Working with teams across Egypt &amp; the GCC</p>
-              </div>
-            </article>
-          </div>
+          <a href="#work" class="badge" aria-label="Scroll to selected work">
+            <svg class="badge__ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="badgeCircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+              <text><textPath href="#badgeCircle" startOffset="0">FLUTTER DEVELOPER • AVAILABLE FOR WORK • </textPath></text>
+            </svg>
+            <span class="badge__core">OR</span>
+          </a>
         </div>
+
+        <dl class="hero__meta">
+          <div><dt class="mono">Based in</dt><dd>Egypt</dd></div>
+          <div><dt class="mono">Currently</dt><dd>Flutter Developer @ InTheKloud</dd></div>
+          <div><dt class="mono">Focus</dt><dd>Fintech &amp; e-commerce</dd></div>
+          <div class="hero__scroll"><dt class="mono">Scroll</dt><dd><span class="scroll-line" aria-hidden="true"></span></dd></div>
+        </dl>
       </div>
     </section>
 
     <!-- ============ MARQUEE ============ -->
     <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Flutter</span><span>✦</span><span>Dart</span><span>✦</span><span>BLoC</span><span>✦</span><span>Riverpod</span><span>✦</span>
-        <span>SignalR</span><span>✦</span><span>Firebase</span><span>✦</span><span>Paymob</span><span>✦</span><span>SkipCash</span><span>✦</span>
-        <span>Clean Architecture</span><span>✦</span><span>ASP.NET Core</span><span>✦</span><span>GitHub Actions</span><span>✦</span>
+      <div class="marquee__row" data-dir="-1">
+        <div class="marquee__track">
+          <span>Flutter</span><i>✦</i><span class="o">Clean Architecture</span><i>✦</i><span>BLoC / Cubit</span><i>✦</i><span class="o">SignalR</span><i>✦</i><span>Payments</span><i>✦</i><span class="o">Real-time</span><i>✦</i>
+          <span>Flutter</span><i>✦</i><span class="o">Clean Architecture</span><i>✦</i><span>BLoC / Cubit</span><i>✦</i><span class="o">SignalR</span><i>✦</i><span>Payments</span><i>✦</i><span class="o">Real-time</span><i>✦</i>
+        </div>
+      </div>
+      <div class="marquee__row" data-dir="1">
+        <div class="marquee__track">
+          <span class="o">iOS</span><i>✦</i><span>Android</span><i>✦</i><span class="o">Paymob</span><i>✦</i><span>SkipCash</span><i>✦</i><span class="o">Firebase</span><i>✦</i><span>.NET</span><i>✦</i><span class="o">Arabic / English RTL</span><i>✦</i>
+          <span class="o">iOS</span><i>✦</i><span>Android</span><i>✦</i><span class="o">Paymob</span><i>✦</i><span>SkipCash</span><i>✦</i><span class="o">Firebase</span><i>✦</i><span>.NET</span><i>✦</i><span class="o">Arabic / English RTL</span><i>✦</i>
+        </div>
       </div>
     </div>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">02 — Skills</p>
-          <h2 class="section__title">The toolkit behind <span class="accent">shipped</span> apps.</h2>
-        </div>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="label mono reveal">(01) About</p>
+        <p class="about__statement" id="statement">
+          I'm a Flutter developer at InTheKloud, building production fintech and e-commerce apps: live gold prices
+          streamed over SignalR, payments that just work, and merchant tools people use every day. I care about clean
+          architecture, predictable state, and the details that make an app feel trustworthy, from the first commit
+          to the App&nbsp;Store and Google&nbsp;Play.
+        </p>
 
-        <div class="bento">
-          <article class="card skill-card skill-card--wide tilt reveal">
-            <span class="skill-card__num mono">01</span>
-            <h3>Flutter &amp; Architecture</h3>
-            <ul class="tags">
-              <li>Flutter</li><li>BLoC / Cubit</li><li>Riverpod</li><li>Clean Architecture</li>
-              <li>MVVM</li><li>Feature-First</li><li>Responsive UI</li><li>Flutter Testing</li>
-            </ul>
-          </article>
-          <article class="card skill-card tilt reveal">
-            <span class="skill-card__num mono">02</span>
-            <h3>Languages &amp; Principles</h3>
-            <ul class="tags"><li>Dart</li><li>C#</li><li>OOP</li><li>SOLID</li></ul>
-          </article>
-          <article class="card skill-card tilt reveal">
-            <span class="skill-card__num mono">03</span>
-            <h3>Networking &amp; Real-Time</h3>
-            <ul class="tags"><li>REST APIs</li><li>Dio</li><li>JWT</li><li>Refresh Tokens</li><li>SignalR</li><li>HTTP</li></ul>
-          </article>
-          <article class="card skill-card tilt reveal">
-            <span class="skill-card__num mono">04</span>
-            <h3>Auth &amp; Payments</h3>
-            <ul class="tags"><li>Social Login</li><li>Sign in with Apple</li><li>Firebase Auth</li><li>Paymob</li><li>SkipCash</li></ul>
-          </article>
-          <article class="card skill-card skill-card--wide tilt reveal">
-            <span class="skill-card__num mono">05</span>
-            <h3>Platform &amp; Storage</h3>
-            <ul class="tags">
-              <li>WebView</li><li>Firebase FCM</li><li>Crashlytics</li><li>Deep Links</li><li>Native Platform Channels</li>
-              <li>Hive</li><li>SharedPreferences</li><li>Flutter Secure Storage</li><li>sqflite</li>
-            </ul>
-          </article>
-          <article class="card skill-card tilt reveal">
-            <span class="skill-card__num mono">06</span>
-            <h3>Release &amp; Tooling</h3>
-            <ul class="tags">
-              <li>Git</li><li>GitHub Actions</li><li>Azure DevOps</li><li>App Store Connect</li>
-              <li>TestFlight</li><li>Google Play Console</li><li>Linux</li>
-            </ul>
-          </article>
-          <article class="card skill-card skill-card--full tilt reveal">
-            <span class="skill-card__num mono">07</span>
-            <h3>Backend</h3>
-            <ul class="tags">
-              <li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>SQL Server</li>
-              <li>RESTful APIs</li><li>JWT Authentication</li><li>LINQ</li><li>ASP.NET Core Identity</li><li>Swagger / OpenAPI</li>
-            </ul>
-          </article>
+        <div class="about__grid">
+          <div class="stats">
+            <div class="stat reveal"><span class="stat__num" data-count="2">2</span><span class="stat__label">Production apps shipped</span></div>
+            <div class="stat reveal"><span class="stat__num" data-count="2">2</span><span class="stat__label">Platforms · iOS &amp; Android</span></div>
+            <div class="stat reveal"><span class="stat__num" data-count="20" data-suffix="+">20+</span><span class="stat__label">Core modules delivered</span></div>
+            <div class="stat reveal"><span class="stat__num" data-count="2">2</span><span class="stat__label">Payment gateways integrated</span></div>
+          </div>
+          <dl class="facts">
+            <div class="reveal"><dt class="mono">Education</dt><dd>B.Sc. Electronics &amp; Communication Engineering, Mansoura University · 2020–2025 · <span class="hl">Excellent</span></dd></div>
+            <div class="reveal"><dt class="mono">Backend</dt><dd>C#, .NET, ASP.NET Core, EF Core &amp; SQL Server, so I speak the API team's language.</dd></div>
+            <div class="reveal"><dt class="mono">Languages</dt><dd>Arabic (native) · English (professional)</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
     <!-- ============ WORK ============ -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">03 — Featured work</p>
-          <h2 class="section__title">Production apps, <span class="accent">live</span> in the stores.</h2>
+    <section class="section section--work" id="work">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="label mono reveal">(02) Selected work</p>
+          <h2 class="section__title split">Selected <em>work</em></h2>
+          <p class="section__aside mono reveal">2 production apps<br/>2025 — Present</p>
         </div>
 
-        <!-- Value Gold -->
-        <article class="project" data-theme="gold">
-          <div class="project__media">
-            <div class="project__img-wrap">
-              <img src="assets/valuegold-cover.jpg" alt="Value Gold app screens showing live gold prices and product checkout" loading="lazy" width="1600" height="900" />
+        <div class="stack">
+          <article class="work-card" data-cursor="View" data-open="valuegold" tabindex="0" role="button" aria-label="Open Value Gold case study" style="--tint:#8b1530">
+            <div class="work-card__inner">
+              <div class="work-card__shade" aria-hidden="true"></div>
+              <div class="work-card__info">
+                <div class="work-card__top mono"><span>01 / 02</span><span>Fintech · Qatar</span></div>
+                <h3 class="work-card__title">Value Gold</h3>
+                <p class="work-card__sub">Gold e-commerce &amp; investment platform</p>
+                <p class="work-card__need">Let customers track live gold prices and buy, sell, or invest in digital and physical gold with confidence.</p>
+                <ul class="chips chips--sm"><li>Flutter</li><li>BLoC/Cubit</li><li>SignalR</li><li>SkipCash</li><li>Apple Sign-In</li></ul>
+                <span class="work-card__link">Case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              </div>
+              <div class="work-card__media">
+                <img src="assets/valuegold-phones.jpg" alt="Value Gold app: live gold prices and product checkout screens" width="1045" height="1100" loading="lazy" />
+              </div>
             </div>
-          </div>
-          <div class="project__body reveal">
-            <p class="project__meta mono">Fintech · WealthTech · Qatar (QAR)</p>
-            <h3 class="project__title">Value Gold</h3>
-            <p class="project__subtitle">Digital gold e-commerce &amp; investment platform</p>
-            <p class="project__need"><span>Business need</span> Let customers track live gold prices and buy, sell, or invest in digital and physical gold with confidence.</p>
-            <ul class="project__bullets">
-              <li>Live gold pricing streamed in real time with <strong>SignalR</strong>, purity- and quantity-based purchasing.</li>
-              <li>Full <strong>buy / sell</strong>, digital → physical conversion, gifting and wallet flows.</li>
-              <li><strong>SkipCash</strong> payments plus <strong>Social Login &amp; Sign in with Apple</strong> onboarding.</li>
-            </ul>
-            <ul class="tags tags--sm">
-              <li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>SignalR</li><li>Dio</li><li>SkipCash</li><li>Firebase</li>
-            </ul>
-            <div class="project__actions">
-              <button class="btn btn--primary btn--sm" data-open="valuegold">Case study</button>
-              <span class="badge-shipped"><span class="dot"></span> iOS · Android</span>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Vtreena -->
-        <article class="project project--reverse" data-theme="teal">
-          <div class="project__media">
-            <div class="project__img-wrap">
-              <img src="assets/vtreena-cover.jpg" alt="Vtreena Merchant app screens showing order list and order details in Arabic" loading="lazy" width="1600" height="900" />
+          <article class="work-card" data-cursor="View" data-open="vtreena" tabindex="0" role="button" aria-label="Open Vtreena Merchant case study" style="--tint:#0e7c86">
+            <div class="work-card__inner">
+              <div class="work-card__shade" aria-hidden="true"></div>
+              <div class="work-card__info">
+                <div class="work-card__top mono"><span>02 / 02</span><span>E-commerce · SaaS</span></div>
+                <h3 class="work-card__title">Vtreena Merchant</h3>
+                <p class="work-card__sub">Merchant management &amp; e-commerce platform</p>
+                <p class="work-card__need">Give merchants a single app to run daily operations: catalog, orders, shipments, invoicing and payment collection.</p>
+                <ul class="chips chips--sm"><li>Flutter</li><li>Clean Architecture</li><li>Paymob</li><li>WebView</li><li>RTL</li></ul>
+                <span class="work-card__link">Case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              </div>
+              <div class="work-card__media">
+                <img src="assets/vtreena-phones.jpg" alt="Vtreena Merchant app: Arabic order list and order details screens" width="1013" height="1100" loading="lazy" />
+              </div>
             </div>
-          </div>
-          <div class="project__body reveal">
-            <p class="project__meta mono">E-Commerce · Merchant SaaS · Arabic / English</p>
-            <h3 class="project__title">Vtreena Merchant</h3>
-            <p class="project__subtitle">Merchant management &amp; e-commerce platform</p>
-            <p class="project__need"><span>Business need</span> Give merchants a single app to run daily operations — catalog, orders, shipments, invoicing and payment collection.</p>
-            <ul class="project__bullets">
-              <li>End-to-end <strong>catalog, orders, shipments, invoices &amp; collections</strong> with search, filtering and pagination.</li>
-              <li>Recurring and one-time billing via <strong>Paymob</strong> with WebView / iframe checkout.</li>
-              <li><strong>Clean Architecture</strong>, DI, caching and token refresh for a reliable codebase.</li>
-            </ul>
-            <ul class="tags tags--sm">
-              <li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>Dio</li><li>Paymob</li><li>WebView</li><li>Hive</li>
-            </ul>
-            <div class="project__actions">
-              <button class="btn btn--primary btn--sm" data-open="vtreena">Case study</button>
-              <span class="badge-shipped"><span class="dot"></span> App Store · Google Play</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="section" id="capabilities">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="label mono reveal">(03) Services</p>
+          <h2 class="section__title split">What I <em>do</em></h2>
+        </div>
+
+        <ul class="caps">
+          <li class="cap reveal">
+            <span class="cap__num mono">01</span>
+            <h3 class="cap__title">Mobile apps</h3>
+            <p class="cap__desc">Cross-platform Flutter apps for iOS &amp; Android with Clean Architecture, BLoC/Cubit, responsive UI and full Arabic/English RTL.</p>
+            <span class="cap__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </li>
+          <li class="cap reveal">
+            <span class="cap__num mono">02</span>
+            <h3 class="cap__title">Payments &amp; fintech</h3>
+            <p class="cap__desc">Paymob &amp; SkipCash, subscription billing, WebView/iframe checkout, wallets, plus Apple &amp; social sign-in.</p>
+            <span class="cap__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </li>
+          <li class="cap reveal">
+            <span class="cap__num mono">03</span>
+            <h3 class="cap__title">Real-time systems</h3>
+            <p class="cap__desc">SignalR price streaming, live order &amp; shipment updates, push notifications with FCM, caching and token refresh.</p>
+            <span class="cap__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </li>
+          <li class="cap reveal">
+            <span class="cap__num mono">04</span>
+            <h3 class="cap__title">Backend &amp; APIs</h3>
+            <p class="cap__desc">C#, .NET &amp; ASP.NET Core REST APIs with EF Core, SQL Server, JWT/Identity and Swagger documentation.</p>
+            <span class="cap__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ TOOLBOX ============ -->
+    <section class="section" id="toolbox">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="label mono reveal">(04) Toolbox</p>
+          <h2 class="section__title split">The <em>stack</em></h2>
+        </div>
+
+        <div class="tools">
+          <div class="tool reveal"><h4>Flutter &amp; Architecture</h4><ul class="chips"><li>Flutter</li><li>BLoC / Cubit</li><li>Riverpod</li><li>Clean Architecture</li><li>MVVM</li><li>Feature-First</li><li>Responsive UI</li><li>Flutter Testing</li></ul></div>
+          <div class="tool reveal"><h4>Languages &amp; Principles</h4><ul class="chips"><li>Dart</li><li>C#</li><li>OOP</li><li>SOLID</li></ul></div>
+          <div class="tool reveal"><h4>Networking &amp; Real-time</h4><ul class="chips"><li>REST APIs</li><li>Dio</li><li>JWT</li><li>Refresh Tokens</li><li>SignalR</li><li>HTTP</li></ul></div>
+          <div class="tool reveal"><h4>Auth &amp; Payments</h4><ul class="chips"><li>Social Login</li><li>Sign in with Apple</li><li>Firebase Auth</li><li>Paymob</li><li>SkipCash</li></ul></div>
+          <div class="tool reveal"><h4>Platform &amp; Storage</h4><ul class="chips"><li>WebView</li><li>Firebase FCM</li><li>Crashlytics</li><li>Deep Links</li><li>Platform Channels</li><li>Hive</li><li>SharedPreferences</li><li>Secure Storage</li><li>sqflite</li></ul></div>
+          <div class="tool reveal"><h4>Release &amp; Tooling</h4><ul class="chips"><li>Git</li><li>GitHub Actions</li><li>Azure DevOps</li><li>App Store Connect</li><li>TestFlight</li><li>Google Play Console</li><li>Linux</li></ul></div>
+          <div class="tool reveal"><h4>Backend</h4><ul class="chips"><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>SQL Server</li><li>LINQ</li><li>ASP.NET Core Identity</li><li>Swagger / OpenAPI</li></ul></div>
+        </div>
       </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
     <section class="section" id="experience">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">04 — Experience</p>
-          <h2 class="section__title">Where I've been <span class="accent">building</span>.</h2>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="label mono reveal">(05) Experience</p>
+          <h2 class="section__title split">Where I've <em>been</em></h2>
         </div>
 
-        <div class="timeline">
-          <div class="timeline__line" aria-hidden="true"><div class="timeline__fill"></div></div>
-
-          <div class="timeline__item reveal">
-            <span class="timeline__dot" aria-hidden="true"></span>
-            <div class="card timeline__card">
-              <div class="timeline__head">
+        <div class="exp">
+          <article class="exp__row">
+            <span class="exp__rule" aria-hidden="true"></span>
+            <p class="exp__date mono reveal">Nov 2025 — Present</p>
+            <div class="exp__body reveal">
+              <h3>Flutter Developer <span>@ InTheKloud</span></h3>
+              <div class="exp__projects">
                 <div>
-                  <h3>Flutter Developer</h3>
-                  <p class="timeline__company">InTheKloud</p>
+                  <h4>Vtreena Merchant</h4>
+                  <ul>
+                    <li>End-to-end catalog, orders &amp; tracking, shipments, invoices, subscription invoicing and collections, with search, filtering &amp; pagination.</li>
+                    <li>Recurring and one-time billing with Paymob, including WebView/iframe checkout.</li>
+                    <li>Clean Architecture, BLoC/Cubit, DI, caching and token refresh.</li>
+                  </ul>
                 </div>
-                <span class="pill mono">Nov 2025 — Present</span>
-              </div>
-
-              <div class="timeline__project">
-                <h4>Vtreena Merchant <span class="muted">— Merchant Management &amp; E-Commerce</span></h4>
-                <ul>
-                  <li>Built merchant operations covering product catalog, orders &amp; tracking, shipments, invoices, subscription invoicing and collections.</li>
-                  <li>Integrated Paymob for subscription and one-time payments with WebView / iframe checkout flows.</li>
-                  <li>Applied Clean Architecture, BLoC/Cubit, dependency injection, caching and token refresh.</li>
-                </ul>
-              </div>
-
-              <div class="timeline__project">
-                <h4>Value Gold <span class="muted">— Gold E-Commerce &amp; Investment</span></h4>
-                <ul>
-                  <li>Delivered live gold pricing with SignalR streaming, purity/quantity-based purchasing and full buy/sell workflows.</li>
-                  <li>Supported digital and physical gold requests with complete order and checkout flows.</li>
-                  <li>Enabled SkipCash payments plus Social Login and Sign in with Apple.</li>
-                  <li>Supported iOS &amp; Android testing and pre-production workflows ahead of store releases.</li>
-                </ul>
+                <div>
+                  <h4>Value Gold</h4>
+                  <ul>
+                    <li>Live gold pricing streamed with SignalR; purity/quantity-based buy &amp; sell workflows.</li>
+                    <li>Digital and physical gold requests with complete order and checkout flows.</li>
+                    <li>SkipCash payments, Social Login and Sign in with Apple; iOS/Android pre-production workflows.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+            <span class="exp__pill mono reveal">Current</span>
+          </article>
 
-          <div class="timeline__item reveal">
-            <span class="timeline__dot timeline__dot--mint" aria-hidden="true"></span>
-            <div class="card timeline__card">
-              <div class="timeline__head">
-                <div>
-                  <h3>B.Sc. Electronics &amp; Communication Engineering</h3>
-                  <p class="timeline__company">Mansoura University</p>
-                </div>
-                <span class="pill pill--mint mono">2020 — 2025</span>
-              </div>
-              <p class="muted">Graduated with grade <strong class="text-cream">Excellent</strong>.</p>
+          <article class="exp__row">
+            <span class="exp__rule" aria-hidden="true"></span>
+            <p class="exp__date mono reveal">2020 — 2025</p>
+            <div class="exp__body reveal">
+              <h3>B.Sc. Electronics &amp; Communication Eng. <span>@ Mansoura University</span></h3>
+              <p class="exp__note">Faculty of Engineering. Graduated with grade <span class="hl">Excellent</span>.</p>
             </div>
-          </div>
+            <span class="exp__pill exp__pill--mint mono reveal">Degree</span>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="contact__box reveal">
-          <div class="contact__glow" aria-hidden="true"></div>
-          <p class="eyebrow">05 — Contact</p>
-          <h2 class="contact__title">Let's build your next <span class="accent">app</span>.</h2>
-          <p class="contact__lead">Have a Flutter project, a fintech idea, or a role in mind? My inbox is open.</p>
+    <section class="contact" id="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="label mono reveal">(06) Contact</p>
+        <h2 class="contact__title split">Let's work <em>together</em></h2>
 
-          <div class="contact__email">
-            <a href="mailto:osamamohamedr1@gmail.com" class="contact__email-link">osamamohamedr1@gmail.com</a>
-            <button class="icon-btn" id="copyEmail" aria-label="Copy email address" data-email="osamamohamedr1@gmail.com">
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 15V6a2 2 0 012-2h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </button>
+        <div class="contact__row">
+          <a href="mailto:osamamohamedr1@gmail.com" class="contact__circle magnetic" data-cursor="Email">
+            <span>Get in touch</span>
+          </a>
+
+          <div class="contact__details">
+            <div class="contact__email">
+              <a href="mailto:osamamohamedr1@gmail.com" class="link-underline">osamamohamedr1@gmail.com</a>
+              <button class="icon-btn" id="copyEmail" data-email="osamamohamedr1@gmail.com" aria-label="Copy email address">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></svg>
+              </button>
+            </div>
+            <ul class="socials mono">
+              <li><a href="https://github.com/osamamohamedr1" target="_blank" rel="noopener" class="link-underline">GitHub ↗</a></li>
+              <li><a href="https://linkedin.com/in/osamamohamedr1" target="_blank" rel="noopener" class="link-underline">LinkedIn ↗</a></li>
+              <li><a href="tel:+201063198136" class="link-underline">+20 106 319 8136</a></li>
+            </ul>
           </div>
-
-          <ul class="socials">
-            <li>
-              <a href="https://github.com/osamamohamedr1" target="_blank" rel="noopener" class="social magnetic" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.66.35-1.12.64-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.25 10.25 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/osamamohamedr1" target="_blank" rel="noopener" class="social magnetic" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a href="tel:+201063198136" class="social magnetic" aria-label="Phone">
-                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>+20 106 319 8136</span>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
+
+      <footer class="footer">
+        <div class="wrap footer__inner mono">
+          <span>© <span id="year">2026</span> Osama Mohamed Rizk</span>
+          <span>Local time · Cairo <span class="js-clock">--:--</span></span>
+          <a href="#top" class="link-underline">Back to top ↑</a>
+        </div>
+      </footer>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year">2026</span> Osama Mohamed Rizk</p>
-      <p class="muted">Built with HTML, CSS &amp; GSAP</p>
-      <a href="#top" class="footer__top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </footer>
-
-  <!-- ============ CASE STUDY MODAL ============ -->
-  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
-    <button class="modal__close" id="modalClose" aria-label="Close">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <!-- ============ CASE-STUDY DRAWER ============ -->
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <button class="drawer__close" id="drawerClose" aria-label="Close case study">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
-    <div class="modal__inner">
-      <div id="modalContent"></div>
+    <div class="drawer__scroll" data-lenis-prevent>
+      <div id="drawerContent"></div>
     </div>
   </dialog>
 
   <template id="tpl-valuegold">
-    <img class="modal__img" src="assets/valuegold-cover.jpg" alt="Value Gold app cover" />
-    <p class="project__meta mono">Fintech · WealthTech · E-Commerce</p>
-    <h3 class="modal__title" id="modalTitle">Value Gold — Digital Gold Investment App</h3>
-    <p class="modal__lead">A production-grade iOS &amp; Android app for buying, holding, gifting and converting digital gold to physical delivery — with live pricing, secure KYC onboarding, integrated payments and full Arabic/English localization.</p>
-    <dl class="modal__facts">
-      <div><dt>Platforms</dt><dd>iPhone · iPad · Android</dd></div>
-      <div><dt>Market</dt><dd>Qatar (QAR) · GCC-ready</dd></div>
-      <div><dt>Role</dt><dd>Flutter Developer</dd></div>
-    </dl>
-    <h4>Key features</h4>
-    <ul class="feature-grid">
-      <li><strong>Live gold pricing</strong>Real-time buy/sell rates across purities via SignalR, with live % movement.</li>
-      <li><strong>Buy &amp; sell flow</strong>Transparent price breakdowns, quantity selectors and one-tap checkout.</li>
-      <li><strong>Portfolio dashboard</strong>Portfolio value, purchasing power and holdings with balance-hiding.</li>
-      <li><strong>Digital → physical</strong>Convert digital holdings into certified physical gold bars.</li>
-      <li><strong>Gifting</strong>Send gold to anyone by phone or email, with requests &amp; history tabs.</li>
-      <li><strong>Wallet &amp; payments</strong>Deposit / withdraw via SkipCash with full transaction history.</li>
-      <li><strong>KYC &amp; onboarding</strong>Guided identity verification, Social Login and Sign in with Apple.</li>
-      <li><strong>AR / EN localization</strong>Fully bilingual interface with right-to-left layout support.</li>
-    </ul>
-    <h4>Tech stack</h4>
-    <ul class="tags"><li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>SignalR</li><li>Dio</li><li>REST APIs</li><li>SkipCash</li><li>WebView</li><li>Firebase</li></ul>
+    <img class="drawer__img" src="assets/valuegold-cover.jpg" alt="Value Gold app cover" />
+    <div class="drawer__body">
+      <p class="label mono">Case study · 01</p>
+      <h3 class="drawer__title" id="drawerTitle">Value Gold</h3>
+      <p class="drawer__lead">A production-grade iOS &amp; Android app for buying, holding, gifting and converting digital gold to physical delivery, with live pricing, secure KYC onboarding, integrated payments and full Arabic/English localization.</p>
+      <dl class="drawer__facts">
+        <div><dt class="mono">Platforms</dt><dd>iPhone · iPad · Android</dd></div>
+        <div><dt class="mono">Market</dt><dd>Qatar (QAR) · GCC-ready</dd></div>
+        <div><dt class="mono">Role</dt><dd>Flutter Developer</dd></div>
+      </dl>
+      <h4>Key features</h4>
+      <ul class="features">
+        <li><strong>Live gold pricing</strong>Real-time buy/sell rates across purities via SignalR, with live % movement.</li>
+        <li><strong>Buy &amp; sell flow</strong>Transparent price breakdowns, quantity selectors and one-tap checkout.</li>
+        <li><strong>Portfolio dashboard</strong>Portfolio value, purchasing power and holdings with balance-hiding.</li>
+        <li><strong>Digital → physical</strong>Convert digital holdings into certified physical gold bars.</li>
+        <li><strong>Gifting</strong>Send gold to anyone by phone or email, with requests &amp; history tabs.</li>
+        <li><strong>Wallet &amp; payments</strong>Deposit / withdraw via SkipCash with full transaction history.</li>
+        <li><strong>KYC &amp; onboarding</strong>Guided identity verification, Social Login and Sign in with Apple.</li>
+        <li><strong>AR / EN localization</strong>Fully bilingual interface with right-to-left layout support.</li>
+      </ul>
+      <h4>Tech stack</h4>
+      <ul class="chips"><li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>SignalR</li><li>Dio</li><li>REST APIs</li><li>SkipCash</li><li>WebView</li><li>Firebase</li></ul>
+    </div>
   </template>
 
   <template id="tpl-vtreena">
-    <img class="modal__img" src="assets/vtreena-cover.jpg" alt="Vtreena Merchant app cover" />
-    <p class="project__meta mono">E-Commerce · Merchant SaaS</p>
-    <h3 class="modal__title" id="modalTitle">Vtreena Merchant — Manage Your Store on the Go</h3>
-    <p class="modal__lead">A mobile platform that gives store owners centralized control over products, orders, shipments, subscriptions and invoices — built feature-first with BLoC/Cubit, full Arabic/English RTL/LTR support, and shipped to the App Store and Google Play.</p>
-    <dl class="modal__facts">
-      <div><dt>Platforms</dt><dd>iPhone · iPad · Android</dd></div>
-      <div><dt>Release</dt><dd>App Store · Google Play</dd></div>
-      <div><dt>Role</dt><dd>Flutter Developer</dd></div>
-    </dl>
-    <h4>Key features</h4>
-    <ul class="feature-grid">
-      <li><strong>Product management</strong>Prices, discounts and stock vs. sold quantities with search, filter &amp; sort.</li>
-      <li><strong>Order management</strong>Status tracking (active, pending, delivered), grouping and full order details.</li>
-      <li><strong>Shipment tracking</strong>Timeline of every status change from order to delivery or return.</li>
-      <li><strong>Subscriptions &amp; plans</strong>Monthly / yearly plans with in-app upgrade via Paymob.</li>
-      <li><strong>Invoices &amp; collections</strong>Issue and follow up invoices and store collections.</li>
-      <li><strong>Real-time updates</strong>Instant order and shipment status updates without refreshing.</li>
-      <li><strong>Apple &amp; social sign-in</strong>Fast, secure login with Apple or social accounts.</li>
-      <li><strong>Arabic / English</strong>Fully bilingual UI with seamless RTL ↔ LTR switching.</li>
-    </ul>
-    <h4>Tech stack</h4>
-    <ul class="tags"><li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>Feature-First</li><li>Dio</li><li>REST APIs</li><li>Paymob</li><li>WebView</li><li>Firebase</li><li>Hive</li></ul>
+    <img class="drawer__img" src="assets/vtreena-cover.jpg" alt="Vtreena Merchant app cover" />
+    <div class="drawer__body">
+      <p class="label mono">Case study · 02</p>
+      <h3 class="drawer__title" id="drawerTitle">Vtreena Merchant</h3>
+      <p class="drawer__lead">A mobile platform that gives store owners centralized control over products, orders, shipments, subscriptions and invoices. Built feature-first with BLoC/Cubit, full Arabic/English RTL/LTR support, and shipped to the App Store and Google Play.</p>
+      <dl class="drawer__facts">
+        <div><dt class="mono">Platforms</dt><dd>iPhone · iPad · Android</dd></div>
+        <div><dt class="mono">Release</dt><dd>App Store · Google Play</dd></div>
+        <div><dt class="mono">Role</dt><dd>Flutter Developer</dd></div>
+      </dl>
+      <h4>Key features</h4>
+      <ul class="features">
+        <li><strong>Product management</strong>Prices, discounts and stock vs. sold quantities with search, filter &amp; sort.</li>
+        <li><strong>Order management</strong>Status tracking (active, pending, delivered), grouping and full order details.</li>
+        <li><strong>Shipment tracking</strong>Timeline of every status change from order to delivery or return.</li>
+        <li><strong>Subscriptions &amp; plans</strong>Monthly / yearly plans with in-app upgrade via Paymob.</li>
+        <li><strong>Invoices &amp; collections</strong>Issue and follow up invoices and store collections.</li>
+        <li><strong>Real-time updates</strong>Instant order and shipment status updates without refreshing.</li>
+        <li><strong>Apple &amp; social sign-in</strong>Fast, secure login with Apple or social accounts.</li>
+        <li><strong>Arabic / English</strong>Fully bilingual UI with seamless RTL ↔ LTR switching.</li>
+      </ul>
+      <h4>Tech stack</h4>
+      <ul class="chips"><li>Flutter</li><li>BLoC/Cubit</li><li>Clean Architecture</li><li>Feature-First</li><li>Dio</li><li>REST APIs</li><li>Paymob</li><li>WebView</li><li>Firebase</li><li>Hive</li></ul>
+    </div>
   </template>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
