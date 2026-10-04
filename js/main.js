@@ -160,15 +160,20 @@
   splitWords(statement, 'hw');
 
   /* ---------- Hero intro ---------- */
-  const heroFade = ['.hero__intro', '.hero__ctas .btn', '.badge', '.hero__meta > div'];
-  gsap.set('.hero__kicker span, .hero__title .line > span', { yPercent: 115 });
+  const heroFade = ['.hero__status', '.hero__hi', '.hero__role', '.hero__summary', '.hero__chips li', '.hero__ctas .btn', '.badge', '.hero__meta > div'];
   gsap.set(heroFade, { opacity: 0, y: 24 });
+  gsap.set('.hero__name', { yPercent: 35, clipPath: 'inset(0% 0% 100% 0%)' });
 
-  const heroIn = () => gsap.timeline({ defaults: { ease: 'power4.out' } })
+  const heroIn = () => gsap.timeline({ defaults: { ease: 'power4.out' }, onComplete: startTyping })
     .from('.nav', { yPercent: -100, duration: 1, clearProps: 'transform' }, 0)
-    .to('.hero__kicker span', { yPercent: 0, duration: 1 }, 0.05)
-    .to('.hero__title .line > span', { yPercent: 0, duration: 1.3, stagger: 0.12 }, 0.12)
-    .to(heroFade, { opacity: 1, y: 0, duration: 1, stagger: 0.07 }, 0.55);
+    .to('.hero__status', { opacity: 1, y: 0, duration: 0.9 }, 0.05)
+    .to('.hero__hi', { opacity: 1, y: 0, duration: 0.9 }, 0.15)
+    .to('.hero__name', { yPercent: 0, clipPath: 'inset(0% 0% -15% 0%)', duration: 1.4 }, 0.25)
+    .to('.hero__role', { opacity: 1, y: 0, duration: 0.9 }, 0.6)
+    .to('.hero__summary', { opacity: 1, y: 0, duration: 0.9 }, 0.7)
+    .to('.hero__chips li', { opacity: 1, y: 0, duration: 0.7, stagger: 0.05 }, 0.8)
+    .to(['.hero__ctas .btn', '.badge'], { opacity: 1, y: 0, duration: 0.9, stagger: 0.08 }, 0.95)
+    .to('.hero__meta > div', { opacity: 1, y: 0, duration: 0.9, stagger: 0.06 }, 1.05);
 
   /* ---------- Loader (once per session) ---------- */
   if (html.classList.contains('is-loading')) {
@@ -198,9 +203,9 @@
     heroIn();
   }
 
-  // Hero headline drifts up as you scroll away
-  gsap.to('.hero__title', {
-    yPercent: -18, ease: 'none',
+  // Name drifts up as you scroll away
+  gsap.to('.hero__name', {
+    yPercent: -25, ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
   });
 
@@ -338,6 +343,27 @@
   });
 
   /* ---------- helpers ---------- */
+  // Types through the roles in the hero, like a terminal prompt.
+  function startTyping() {
+    const el = $('#typed');
+    const roles = ['Flutter Developer @ InTheKloud', 'Fintech & E-Commerce Apps', 'Shipped to App Store & Google Play', '.NET Backend Developer'];
+    let r = 0, i = roles[0].length, deleting = true;
+    const tick = () => {
+      if (deleting) {
+        i--;
+        if (i === 0) { deleting = false; r = (r + 1) % roles.length; }
+      } else {
+        i++;
+      }
+      el.textContent = roles[r].slice(0, i) || '\u200b';
+      let delay = deleting ? 32 : 70;
+      if (!deleting && i === roles[r].length) { deleting = true; delay = 2400; }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 2200);
+  }
+
+
   // Wraps each word in a mask so it can slide up; keeps nested elements like <em>.
   // With a class name (e.g. "hw") words are wrapped in a single plain span instead.
   function splitWords(el, plainClass) {
